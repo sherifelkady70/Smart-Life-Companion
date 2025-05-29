@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.smartlifecompanion.navigation.MyAppNavigation
-import com.example.smartlifecompanion.splash.SplashScreen
 import com.example.smartlifecompanion.ui.theme.SmartLifeCompanionTheme
 
 class MainActivity : ComponentActivity() {

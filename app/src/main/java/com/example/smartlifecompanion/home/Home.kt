@@ -13,32 +13,33 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.smartlifecompanion.R
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController:NavController) {
     Column(modifier = Modifier.fillMaxSize()) {
         Spacer(modifier = Modifier.padding(50.dp))
-        CardClick(ServiceTypes.DAILY_QUOTES)
-        CardClick(ServiceTypes.NEWS)
+        CardClick(navController,ServiceTypes.DAILY_QUOTES)
+        CardClick(navController,ServiceTypes.NEWS)
     }
 }
 
 @Composable
-fun CardClick(featureTypes: ServiceTypes) {
+fun CardClick(navController:NavController,featureTypes: ServiceTypes) {
     when(featureTypes){
         ServiceTypes.DAILY_QUOTES ->{
-            Card(stringResource(R.string.daily_quotes)) { }
+            Card(stringResource(R.string.daily_quotes)) {
+                navController.navigate("DailyQuotes")
+            }
         }
         ServiceTypes.NEWS ->{
             Card(stringResource(R.string.news)) { }
@@ -73,5 +74,5 @@ fun Card(featureName : String , onClick : ()->Unit){
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun HomePreview() {
-    HomeScreen()
+//    HomeScreen()
 }

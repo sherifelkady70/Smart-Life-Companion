@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Smart Life Companion</string>
+    <string name="daily_quotes">Daily Quotes</string>
+    <string name="news">News</string>
+
 </resources>

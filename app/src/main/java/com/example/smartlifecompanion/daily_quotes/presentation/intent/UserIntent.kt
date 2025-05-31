@@ -1,7 +1,7 @@
 package com.example.smartlifecompanion.daily_quotes.presentation.intent
 
-sealed class Intent{
-    data object FetchQuotes  : Intent()
+sealed class UserIntent{
+    data object FetchQuotes  : UserIntent()
 }
 
 

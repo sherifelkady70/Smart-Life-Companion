@@ -5,13 +5,14 @@ sealed class UserIntent{
 }
 
 
-//sealed class SideEffects{
-//    data class ShowQuote(val quote : String) : SideEffects()
-//}
-
-
-sealed class UiState{
-    data object Loading : UiState()
-    data object Idle : UiState()
-    data class Success(val quote : String) : UiState()
+sealed class SideEffects{
+    data class ShowQuote(val quote : String) : SideEffects()
+    data class ShowErrorQuote(val message : String) : SideEffects()
 }
+
+
+data class UiState(
+    var isLoading : Boolean = false,
+    var quote : String = "sasas",
+    var errorMessage : String = ""
+)

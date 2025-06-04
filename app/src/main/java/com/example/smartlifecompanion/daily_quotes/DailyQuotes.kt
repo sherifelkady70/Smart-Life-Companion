@@ -13,32 +13,16 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.smartlifecompanion.daily_quotes.presentation.intent.UiState
-import com.example.smartlifecompanion.daily_quotes.presentation.intent.UserIntent
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.smartlifecompanion.daily_quotes.presentation.viewmodel.DailyQuotesViewModel
 
 @Composable
-fun DailyQuotes(viewModel: DailyQuotesViewModel = viewModel()){
+fun DailyQuotes(viewModel: DailyQuotesViewModel = hiltViewModel() ){
     val state by viewModel.uiState.collectAsState()
     Box(Modifier.fillMaxSize().padding(top = 50.dp)) {
-        Text("Daily Quotes", fontSize = 34.sp ,
-            modifier = Modifier.align(Alignment.TopCenter),
+        Text(state.quote, fontSize = 14.sp ,
+            modifier = Modifier.align(Alignment.Center),
             fontStyle = FontStyle.Normal )
-
-        when(state){
-            is UiState.Idle -> {
-                viewModel.processIntent(UserIntent.FetchQuotes)
-            }
-            is UiState.Loading -> {
-
-            }
-            is UiState.Success ->{
-                Text((state as UiState.Success).quote, fontSize = 24.sp ,
-                    modifier = Modifier.align(Alignment.Center),
-                    fontStyle = FontStyle.Normal )
-            }
-        }
     }
 }
 
@@ -46,5 +30,5 @@ fun DailyQuotes(viewModel: DailyQuotesViewModel = viewModel()){
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun DailyQuotesScreenPreview(){
-    //DailyQuotes()
+    DailyQuotes()
 }

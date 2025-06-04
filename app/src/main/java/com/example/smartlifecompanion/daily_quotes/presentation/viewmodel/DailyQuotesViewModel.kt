@@ -1,30 +1,64 @@
 package com.example.smartlifecompanion.daily_quotes.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.smartlifecompanion.daily_quotes.presentation.intent.UserIntent
+import com.example.smartlifecompanion.daily_quotes.domain.usecase.DailyQuoteUseCase
 import com.example.smartlifecompanion.daily_quotes.presentation.intent.UiState
+import com.example.smartlifecompanion.daily_quotes.presentation.intent.UserIntent
+import com.example.smartlifecompanion.daily_quotes.utilits.NetworkStateResource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class DailyQuotesViewModel : ViewModel() {
+@HiltViewModel
+class DailyQuotesViewModel @Inject constructor(
+    private val getQuoteUseCase: DailyQuoteUseCase
+): ViewModel() {
 
-    private val _uiState = MutableStateFlow<UiState>(UiState.Idle)
+    private val _uiState = MutableStateFlow(UiState())
     val uiState = _uiState.asStateFlow()
-    
-    init {
 
+
+    init {
+        processIntent(UserIntent.FetchQuotes)
+    }
+     fun processIntent(userAction : UserIntent){
+        when(userAction){
+            is UserIntent.FetchQuotes ->{
+                getQuote()
+            }
+        }
     }
 
-    fun processIntent(userIntent: UserIntent){
-        when(userIntent){
-            UserIntent.FetchQuotes ->{
-                viewModelScope.launch {
-                    _uiState.value = UiState.Loading
-
+    private fun getQuote(){
+        viewModelScope.launch(Dispatchers.IO) {
+            getQuoteUseCase.invoke().collect{ resource ->
+                Log.d("TAG","collect")
+                when(resource){
+                    is NetworkStateResource.Loading ->{
+                        Log.d("TAG", "Loading")
+                        _uiState.update { it.copy(isLoading = true) }
+                    }
+                    is NetworkStateResource.Error -> {
+                        Log.d("TAG", resource.message)
+                        _uiState.update { it.copy(isLoading = false, quote = resource.message) }
+                    }
+                    is NetworkStateResource.Success -> {
+                        Log.d("TAG", resource.data.get(0).q!!)
+                        _uiState.update { it.copy(isLoading = false , quote = resource.data[0].q!!) }
+                    }
                 }
             }
         }
+    }
+
+    private inline fun updateState(update : UiState.() -> UiState){
+        _uiState.update { it.update() }
     }
 }

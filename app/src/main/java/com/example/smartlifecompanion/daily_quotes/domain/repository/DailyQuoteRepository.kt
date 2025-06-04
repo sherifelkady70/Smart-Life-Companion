@@ -1,12 +1,10 @@
-package com.example.smartlifecompanion.daily_quotes.data.service
+package com.example.smartlifecompanion.daily_quotes.domain.repository
 
 import com.example.smartlifecompanion.daily_quotes.data.model.QuoteResponse
 import com.example.smartlifecompanion.daily_quotes.data.model.QuoteResponseItem
 import com.example.smartlifecompanion.daily_quotes.utilits.NetworkStateResource
 import kotlinx.coroutines.flow.Flow
-import retrofit2.http.GET
 
-interface DailyQuotesService {
-    @GET("today")
-    suspend fun getQuote() : List<QuoteResponseItem>
+interface DailyQuoteRepository {
+     fun getQuote() : Flow<List<QuoteResponseItem>>
 }

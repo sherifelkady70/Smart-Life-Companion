@@ -63,12 +63,26 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation (libs.logging.interceptor)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // Optional: For ViewModel support
-    implementation(libs.androidx.hilt.lifecycle.viewmodel)
     kapt(libs.androidx.hilt.compiler)
+
+
+//    // Hilt core
+//    implementation (libs.hilt.android.v250)
+//    kapt (libs.hilt.android.compiler)
+//
+//// Jetpack Lifecycle ViewModel support
+//    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+//    implementation (libs.androidx.lifecycle.runtime.ktx.v270)
+//
+//// Hilt and Jetpack Compose
+//    implementation (libs.androidx.hilt.navigation.compose.v110)
+
 
 }

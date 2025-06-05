@@ -6,13 +6,13 @@ sealed class UserIntent{
 
 
 sealed class SideEffects{
-    data class ShowQuote(val quote : String) : SideEffects()
-    data class ShowErrorQuote(val message : String) : SideEffects()
+    data class ShowToastError(val message : String) : SideEffects()
 }
 
 
 data class UiState(
     var isLoading : Boolean = false,
     var quote : String = "sasas",
-    var errorMessage : String = ""
+    var errorMessage : String = "",
+    var authorName : String = ""
 )

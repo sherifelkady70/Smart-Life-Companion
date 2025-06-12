@@ -1,4 +1,4 @@
-package com.example.smartlifecompanion.daily_quotes.data.model
+package com.example.smartlifecompanion.daily_quotes.data.model.response
 
 import com.google.gson.annotations.SerializedName
 

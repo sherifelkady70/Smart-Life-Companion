@@ -72,6 +72,16 @@ dependencies {
     // Optional: For ViewModel support
     kapt(libs.androidx.hilt.compiler)
 
+    // Room runtime
+    implementation("androidx.room:room-runtime:2.6.1")
+
+    // Kotlin extensions and coroutines support
+    implementation("androidx.room:room-ktx:2.6.1")
+
+    // Annotation processor (for Java)
+    annotationProcessor("androidx.room:room-compiler:2.6.1")
+
+
 
 //    // Hilt core
 //    implementation (libs.hilt.android.v250)

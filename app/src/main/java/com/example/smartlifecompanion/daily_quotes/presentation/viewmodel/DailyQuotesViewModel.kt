@@ -42,7 +42,7 @@ class DailyQuotesViewModel @Inject constructor(
         }
     }
 
-    fun sendOutput(action: () -> SideEffects) {
+    private fun sendOutput(action: () -> SideEffects) {
         viewModelScope.launch {
             _sideEffects.send(action())
         }

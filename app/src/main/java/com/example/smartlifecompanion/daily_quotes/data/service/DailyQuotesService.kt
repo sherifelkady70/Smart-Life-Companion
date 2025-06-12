@@ -1,9 +1,6 @@
 package com.example.smartlifecompanion.daily_quotes.data.service
 
-import com.example.smartlifecompanion.daily_quotes.data.model.QuoteResponse
-import com.example.smartlifecompanion.daily_quotes.data.model.QuoteResponseItem
-import com.example.smartlifecompanion.daily_quotes.utilits.NetworkStateResource
-import kotlinx.coroutines.flow.Flow
+import com.example.smartlifecompanion.daily_quotes.data.model.response.QuoteResponseItem
 import retrofit2.http.GET
 
 interface DailyQuotesService {

@@ -2,5 +2,6 @@
     <string name="app_name">Smart Life Companion</string>
     <string name="daily_quotes">Daily Quotes</string>
     <string name="news">News</string>
-
+    <string name="Weather">Weather</string>
+    <string name="Maps">Map</string>
 </resources>

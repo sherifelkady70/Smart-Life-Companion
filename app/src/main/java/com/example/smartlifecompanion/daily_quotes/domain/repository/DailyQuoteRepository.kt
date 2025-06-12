@@ -1,8 +1,6 @@
 package com.example.smartlifecompanion.daily_quotes.domain.repository
 
-import com.example.smartlifecompanion.daily_quotes.data.model.QuoteResponse
-import com.example.smartlifecompanion.daily_quotes.data.model.QuoteResponseItem
-import com.example.smartlifecompanion.daily_quotes.utilits.NetworkStateResource
+import com.example.smartlifecompanion.daily_quotes.data.model.response.QuoteResponseItem
 import kotlinx.coroutines.flow.Flow
 
 interface DailyQuoteRepository {

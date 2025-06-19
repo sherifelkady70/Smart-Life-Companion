@@ -7,13 +7,12 @@ import com.example.smartlifecompanion.daily_quotes.domain.usecase.DailyQuoteUseC
 import com.example.smartlifecompanion.daily_quotes.presentation.intent.SideEffects
 import com.example.smartlifecompanion.daily_quotes.presentation.intent.UiState
 import com.example.smartlifecompanion.daily_quotes.presentation.intent.UserIntent
-import com.example.smartlifecompanion.daily_quotes.utilits.NetworkStateResource
+import com.example.smartlifecompanion.utilits.NetworkStateResource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch

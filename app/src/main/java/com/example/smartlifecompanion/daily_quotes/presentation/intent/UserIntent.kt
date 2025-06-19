@@ -12,7 +12,7 @@ sealed class SideEffects{
 
 data class UiState(
     var isLoading : Boolean = false,
-    var quote : String = "sasas",
+    var quote : String = "",
     var errorMessage : String = "",
     var authorName : String = ""
 )

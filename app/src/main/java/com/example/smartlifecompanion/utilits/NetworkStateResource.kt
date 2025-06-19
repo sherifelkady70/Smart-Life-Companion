@@ -1,4 +1,4 @@
-package com.example.smartlifecompanion.daily_quotes.utilits
+package com.example.smartlifecompanion.utilits
 
 sealed class NetworkStateResource<out T>{
     data class Success<out T>(val data : T) : NetworkStateResource<T>()

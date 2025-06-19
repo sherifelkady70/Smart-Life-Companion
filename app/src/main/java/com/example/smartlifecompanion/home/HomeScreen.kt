@@ -18,5 +18,6 @@ fun HomeScreen(navController:NavController) {
         CardClick(navController,ServiceTypes.NEWS)
         CardClick(navController,ServiceTypes.WEATHER)
         CardClick(navController,ServiceTypes.MAP)
+        CardClick(navController,ServiceTypes.E_COMMERCE)
     }
 }

@@ -6,4 +6,6 @@ import androidx.room.Dao
 interface QuoteDao {
 
     suspend fun insert()
+
+    suspend fun getQuotes()
 }

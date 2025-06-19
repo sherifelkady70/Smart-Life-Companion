@@ -1,4 +1,4 @@
-package com.example.smartlifecompanion.daily_quotes.utilits
+package com.example.smartlifecompanion.utilits
 
 import com.example.smartlifecompanion.daily_quotes.data.repositoryImpl.DailyQuoteRepositoryImpl
 import com.example.smartlifecompanion.daily_quotes.data.service.DailyQuotesService

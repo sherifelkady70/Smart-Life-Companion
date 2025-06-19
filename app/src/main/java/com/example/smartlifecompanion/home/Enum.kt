@@ -4,5 +4,6 @@ enum class ServiceTypes {
     DAILY_QUOTES,
     NEWS,
     WEATHER,
-    MAP
+    MAP,
+    E_COMMERCE
 }

@@ -49,6 +49,12 @@ fun CardClick(navController: NavController, featureTypes: ServiceTypes) {
                 Toast.makeText(context,"Coming Soon",Toast.LENGTH_SHORT).show()
             }
         }
+
+        ServiceTypes.E_COMMERCE -> {
+            Card(stringResource(R.string.E_Commerce)) {
+                Toast.makeText(context,"Coming Soon",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
 }

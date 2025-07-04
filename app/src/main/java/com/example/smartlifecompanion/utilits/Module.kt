@@ -1,5 +1,7 @@
 package com.example.smartlifecompanion.utilits
 
+import com.example.smartlifecompanion.daily_quotes.data.data_source.remote.QuoteRemoteDataSource
+import com.example.smartlifecompanion.daily_quotes.data.data_source.remote.QuoteRemoteDataSourceImpl
 import com.example.smartlifecompanion.daily_quotes.data.repositoryImpl.DailyQuoteRepositoryImpl
 import com.example.smartlifecompanion.daily_quotes.data.service.DailyQuotesService
 import com.example.smartlifecompanion.daily_quotes.domain.repository.DailyQuoteRepository
@@ -46,7 +48,13 @@ object Module {
     }
 
     @Provides
-    fun provideDailyQuoteRepository(apiService: DailyQuotesService) : DailyQuoteRepository {
-        return DailyQuoteRepositoryImpl(apiService)
+    fun provideDailyQuoteRepository(quoteRemoteDataSource: QuoteRemoteDataSource) : DailyQuoteRepository {
+        return DailyQuoteRepositoryImpl(quoteRemoteDataSource)
+    }
+
+
+    @Provides
+    fun provideDailyQuoteRemoteDataSource(apiService: DailyQuotesService) : QuoteRemoteDataSource {
+        return QuoteRemoteDataSourceImpl(apiService)
     }
 }

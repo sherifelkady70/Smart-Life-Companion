@@ -50,15 +50,12 @@ class DailyQuotesViewModel @Inject constructor(
     private fun getQuote() {
         viewModelScope.launch(Dispatchers.IO) {
             getQuoteUseCase.invoke().collect { resource ->
-                Log.d("TAG", "collect")
                 when (resource) {
                     is NetworkStateResource.Loading -> {
-                        Log.d("TAG", "Loading")
                         _uiState.update { it.copy(isLoading = true) }
                     }
 
                     is NetworkStateResource.Error -> {
-                        Log.d("TAG", resource.message)
                         _uiState.update {
                             it.copy(
                                 isLoading = false,
@@ -81,9 +78,5 @@ class DailyQuotesViewModel @Inject constructor(
                 }
             }
         }
-    }
-
-    private inline fun updateState(update: UiState.() -> UiState) {
-        _uiState.update { it.update() }
     }
 }

@@ -69,12 +69,12 @@ class DailyQuotesViewModel @Inject constructor(
                     }
 
                     is NetworkStateResource.Success -> {
-                        Log.d("TAG", resource.data.get(0).q!!)
+                        Log.d("TAG", resource.data.quote)
                         _uiState.update {
                             it.copy(
                                 isLoading = false,
-                                quote = resource.data[0].q!!,
-                                authorName = resource.data[0].a!!
+                                quote = resource.data.quote,
+                                authorName = resource.data.authorName
                             )
                         }
                     }

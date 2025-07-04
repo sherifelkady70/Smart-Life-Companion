@@ -1,4 +1,4 @@
-package com.example.smartlifecompanion.daily_quotes.data.model.local
+package com.example.smartlifecompanion.daily_quotes.data.DTO.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

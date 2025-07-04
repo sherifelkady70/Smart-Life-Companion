@@ -81,7 +81,8 @@ dependencies {
     // Annotation processor (for Java)
     annotationProcessor("androidx.room:room-compiler:2.6.1")
 
-
+    //coil
+    implementation("io.coil-kt:coil-compose:2.5.0")
 
 //    // Hilt core
 //    implementation (libs.hilt.android.v250)

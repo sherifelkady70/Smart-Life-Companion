@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Smart Life Companion"
 include(":app")
- 
+include(":core")

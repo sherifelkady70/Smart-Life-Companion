@@ -1,7 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
@@ -14,7 +13,7 @@ android {
         minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//        consumerProguardFiles("consumer-rules.pro")
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -40,18 +39,13 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":domain:daily_quotes"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation(project(":core"))
 
 
-    implementation(libs.androidx.navigation.compose)
-
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation (libs.logging.interceptor)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
@@ -59,17 +53,5 @@ dependencies {
 
     // Optional: For ViewModel support
     kapt(libs.androidx.hilt.compiler)
-
-    // Room runtime
-    implementation("androidx.room:room-runtime:2.6.1")
-
-    // Kotlin extensions and coroutines support
-    implementation("androidx.room:room-ktx:2.6.1")
-
-    // Annotation processor (for Java)
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
-
-    //coil
-    implementation("io.coil-kt:coil-compose:2.5.0")
 
 }

@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.resolve.featureDependencies
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -9,17 +7,14 @@ plugins {
 }
 
 android {
-    namespace = "com.example.smartlifecompanion"
+    namespace = "com.example.daily_quotes"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.smartlifecompanion"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -38,28 +33,18 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+
+
 
     implementation(libs.androidx.navigation.compose)
 
@@ -85,19 +70,5 @@ dependencies {
 
     //coil
     implementation("io.coil-kt:coil-compose:2.5.0")
-
-    implementation(":features:daily_quotes")
-
-//    // Hilt core
-//    implementation (libs.hilt.android.v250)
-//    kapt (libs.hilt.android.compiler)
-//
-//// Jetpack Lifecycle ViewModel support
-//    implementation (libs.androidx.lifecycle.viewmodel.ktx)
-//    implementation (libs.androidx.lifecycle.runtime.ktx.v270)
-//
-//// Hilt and Jetpack Compose
-//    implementation (libs.androidx.hilt.navigation.compose.v110)
-
 
 }

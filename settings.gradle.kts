@@ -22,3 +22,6 @@ dependencyResolutionManagement {
 rootProject.name = "Smart Life Companion"
 include(":app")
 include(":core")
+include(":features")
+include(":features:daily_quotes")
+include(":data")

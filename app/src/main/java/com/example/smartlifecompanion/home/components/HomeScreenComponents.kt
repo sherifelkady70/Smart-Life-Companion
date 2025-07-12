@@ -38,7 +38,6 @@ fun CardClick(navController: NavController, featureTypes: ServiceTypes) {
                 Toast.makeText(context,"Coming Soon",Toast.LENGTH_SHORT).show()
             }
         }
-
         ServiceTypes.WEATHER -> {
             Card(stringResource(R.string.Weather)) {
                 navController.navigate("Weather")

@@ -1,4 +1,4 @@
-package com.example.daily_quotes.presentation.view.screen
+package com.example.daily_quotes.view.screen
 
 import android.widget.Toast
 import androidx.compose.foundation.content.MediaType.Companion.Text
@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -22,9 +23,9 @@ import androidx.compose.ui.text.input.KeyboardType.Companion.Text
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.daily_quotes.presentation.intent.SideEffects
-import com.example.daily_quotes.presentation.view.components.QuoteAndAuthorView
-import com.example.daily_quotes.presentation.viewmodel.DailyQuotesViewModel
+import com.example.daily_quotes.intent.SideEffects
+import com.example.daily_quotes.view.components.QuoteAndAuthorView
+import com.example.daily_quotes.viewmodel.DailyQuotesViewModel
 import org.w3c.dom.Text
 
 

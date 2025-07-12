@@ -1,4 +1,4 @@
-package com.example.daily_quotes.presentation.intent
+package com.example.daily_quotes.intent
 
 sealed class UserIntent{
     data object FetchQuotes  : UserIntent()

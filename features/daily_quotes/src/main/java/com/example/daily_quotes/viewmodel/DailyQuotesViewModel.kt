@@ -1,13 +1,13 @@
-package com.example.daily_quotes.presentation.viewmodel
+package com.example.daily_quotes.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.smartlifecompanion.daily_quotes.domain.usecase.DailyQuoteUseCase
-import com.example.daily_quotes.presentation.intent.SideEffects
-import com.example.daily_quotes.presentation.intent.UiState
-import com.example.daily_quotes.presentation.intent.UserIntent
-import com.example.smartlifecompanion.utilits.NetworkStateResource
+import com.example.core.NetworkStateResource
+import com.example.daily_quotes.domain.usecase.DailyQuoteUseCase
+import com.example.daily_quotes.intent.SideEffects
+import com.example.daily_quotes.intent.UiState
+import com.example.daily_quotes.intent.UserIntent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel

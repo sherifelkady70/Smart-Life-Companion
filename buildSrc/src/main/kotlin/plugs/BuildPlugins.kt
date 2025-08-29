@@ -1,0 +1,4 @@
+package plugs
+
+object BuildPlugins {
+}

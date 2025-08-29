@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.resolve.featureDependencies
 
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    id("com.google.dagger.hilt.android")
+    id(plugs.BuildPlugins.ANDROID_APPLICATION)
+    id(plugs.BuildPlugins.KOTLIN_ANDROID)
+    id(plugs.BuildPlugins.KOTLIN_COMPOSE)
+    id(plugs.BuildPlugins.HILT)
     kotlin("kapt")
 }
 

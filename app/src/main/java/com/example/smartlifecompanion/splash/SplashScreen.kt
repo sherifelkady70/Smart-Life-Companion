@@ -18,13 +18,11 @@ import kotlinx.coroutines.delay
 @Composable
 fun SplashScreen(navController: NavController) {
     LaunchedEffect(Unit) {
-        Log.d("TAG","Splash")
         delay(3000)
         navController.navigate("Home"){
             popUpTo("SplashScreen") { inclusive = true }
         }
     }
-    Log.d("TAG","Splash")
     Box(modifier = Modifier
         .fillMaxSize()
         .background(color = Color.LightGray)
@@ -33,4 +31,5 @@ fun SplashScreen(navController: NavController) {
             , modifier = Modifier.align(Alignment.Center) ,
             fontSize = 28.sp , fontStyle = FontStyle.Italic)
     }
+
 }

@@ -1,10 +1,10 @@
 
 import dependencies.Dependencies
+import dependencies.debugImplementation
+import dependencies.implementation
+import dependencies.kapt
+import dependencies.releaseImplementation
 import org.gradle.api.artifacts.dsl.DependencyHandler
-import org.gradle.kotlin.dsl.debugImplementation
-import org.gradle.kotlin.dsl.implementation
-import org.gradle.kotlin.dsl.kapt
-import org.gradle.kotlin.dsl.releaseImplementation
 
 
 fun DependencyHandler.room() {
@@ -101,73 +101,3 @@ fun DependencyHandler.workManger() {
     implementation(Dependencies.hiltWork)
     implementation(Dependencies.workManger)
 }
-//
-//fun DependencyHandler.loginModule() {
-//    moduleImplementation(project(":features:login"))
-//}
-//
-//fun DependencyHandler.searchDataSelectionModule() {
-//    moduleImplementation(project(":features:searchDataSelection"))
-//}
-//
-//fun DependencyHandler.homeModule() {
-//    moduleImplementation(project(":features:home"))
-//}
-//
-//fun DependencyHandler.billPaymentModule() {
-//    moduleImplementation(project(":features:billPayment"))
-//}
-//fun DependencyHandler.customerDetailsModule() {
-//    moduleImplementation(project(":features:customerDetails"))
-//}
-//
-//fun DependencyHandler.coreDataModule() {
-//    moduleImplementation(project(":core:data"))
-//}
-//
-//fun DependencyHandler.coreDataStoreModule() {
-//    moduleImplementation(project(":core:datastore"))
-//}
-//
-//fun DependencyHandler.coreProtoDataStoreModule() {
-//    moduleImplementation(project(":core:protodatastore"))
-//}
-//
-//fun DependencyHandler.coreDomainModule() {
-//    moduleImplementation(project(":core:domain"))
-//}
-//
-//fun DependencyHandler.coreNavigatorModule() {
-//    moduleImplementation(project(":core:navigator"))
-//}
-//
-//fun DependencyHandler.corePresentationModule() {
-//    moduleImplementation(project(":core:presentation"))
-//}
-//
-//fun DependencyHandler.coreConfigModule() {
-//    moduleImplementation(project(":core:config"))
-//}
-//
-//fun DependencyHandler.printerModule() {
-//    moduleImplementation(project(":features:printer"))
-//}
-//
-//fun DependencyHandler.roomModule() {
-//    moduleImplementation(project(":core:room"))
-//}
-//
-//fun DependencyHandler.customerListModule() {
-//    moduleImplementation(project(":features:customerList"))
-//}
-//fun DependencyHandler.reportsModule() {
-//    moduleImplementation(project(":features:reports"))
-//}
-//
-//fun DependencyHandler.insertReadingModule() {
-//    moduleImplementation(project(":features:insertReading"))
-//}
-//
-//fun DependencyHandler.complaintsModule() {
-//    moduleImplementation(project(":features:complaints"))
-//}

@@ -30,7 +30,6 @@ It is built with Clean Architecture, MVI, and the latest Android technologies, f
 - Networking: Ktor / Retrofit with Kotlin Serialization  
 - Concurrency: Coroutines & Flow  
 - Persistence: Room Database, DataStore  
-- Testing: JUnit5, MockK, Espresso, Compose Testing  
 - Build System: Gradle with Convention Plugins (MainGradle)  
 - CI/CD: GitLab CI (build, test, sign, and distribute)  
 
@@ -41,8 +40,7 @@ It is built with Clean Architecture, MVI, and the latest Android technologies, f
 - Feature-Based Modularity – Each feature lives in its own module, enabling easy addition or removal.  
 - Scalable Architecture – Long-term maintainability with clean boundaries.  
 - Reactive UI with MVI – State-driven UI powered by Flow and Compose.  
-- Optimized Build Times – Modular Gradle setup with convention plugins.  
-- Strong Testing Foundation – Unit, integration, and UI tests integrated into CI/CD.  
+- Optimized Build Times – Modular Gradle setup with convention plugins.   
 
 ---
 

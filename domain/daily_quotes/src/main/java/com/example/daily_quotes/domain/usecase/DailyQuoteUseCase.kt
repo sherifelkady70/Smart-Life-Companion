@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class DailyQuoteUseCase @Inject constructor(
     private val repo: DailyQuoteRepository
-) {
+) { //collect data from repository and emit state to viewmodel
      operator fun invoke(): Flow<NetworkStateResource<QuoteModel>>  = flow {
           emit(NetworkStateResource.Loading)
          try {

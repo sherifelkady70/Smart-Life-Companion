@@ -1,12 +1,14 @@
 package plugs
 
-import jdk.tools.jlink.resources.plugins
+import com.android.build.gradle.LibraryExtension
+import dependencies.DependenciesVersions
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import kotlin.jvm.java
 
 class MainGradle : Plugin<Project> {
     override fun apply(project: Project) {
-        project.applyPlugins()
+//        project.applyPlugins()
         applyPlugins(project)
     }
 
@@ -19,8 +21,43 @@ class MainGradle : Plugin<Project> {
         }
     }
 
-    private fun Project.applyPlugins(){
-        plugins.apply(BuildPlugins.ANDROID_APPLICATION) // run time
-        plugins.apply(BuildPlugins.HILT)
+    private fun Project.androidConfig() {
+        extensions.getByType(LibraryExtension::class.java).apply {
+            compileSdk = ProjectConfig.compileSdk
+            defaultConfig.apply {
+                minSdk = ProjectConfig.minSdk
+                targetSdk = ProjectConfig.targetSdk
+                versionCode = ProjectConfig.versionCode
+                versionName = ProjectConfig.versionName
+                testInstrumentationRunner = ProjectConfig.testInstrumentationRunner
+            }
+
+            buildTypes {
+                debug {
+                    isMinifyEnabled = false
+                    isShrinkResources = false
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
+                }
+                release {
+                    isMinifyEnabled = false
+                    isShrinkResources = false
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
+                }
+            }
+
+            composeOptions {
+                kotlinCompilerExtensionVersion = DependenciesVersions.KOTLIN_COMPILER
+            }
+        }
     }
+//    private fun Project.applyPlugins(){
+//        plugins.apply(BuildPlugins.ANDROID_APPLICATION) // run time
+//        plugins.apply(BuildPlugins.HILT)
+//    }
 }

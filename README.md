@@ -8,7 +8,7 @@ It is built with Clean Architecture, MVI, and the latest Android technologies, f
 ## Project Architecture
 
 - Multi-Module Setup  
-  - Each feature is developed as an independent Gradle module (e.g., `:feature-payments`, `:feature-profile`, `:feature-reminders`).  
+  - Each feature is developed as an independent Gradle module.  
   - This ensures separation of concerns, faster build times, and scalability.  
 
 - Clean Architecture  
